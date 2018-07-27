@@ -1,0 +1,907 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>
+            Node.js教程_基础(一)-慕课网
+    </title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="renderer" content="webkit" />
+<meta name="mobile-agent" content="format=wml"; url="https://m.imooc.com/learn/348">
+<link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.imooc.com/learn/348">
+<meta name="mobile-agent" content="format=xhtml"; url="https://m.imooc.com/learn/348">
+<meta name="mobile-agent" content="format=html5"; url="https://m.imooc.com/learn/348">
+<meta property="qc:admins" content="77103107776157736375" />
+<meta property="wb:webmaster" content="c4f857219bfae3cb" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta http-equiv="Cache-Control" content="no-transform " />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="dns-prefetch" href="//www.imooc.com" />
+<link rel="dns-prefetch" href="//img.imooc.com" />
+<link rel="dns-prefetch" href="//img.mukewang.com" />
+<link rel="apple-touch-icon" sizes="76x76" href="/static/img/common/touch-icon-ipad.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/static/img/common/touch-icon-iphone-retina.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/static/img/common/touch-icon-ipad-retina.png">
+
+<meta name="Keywords" content="" />
+
+<meta name="description" content="Node.js 的推出，不仅从工程化的角度自动化掉更多琐碎费时的工作，更打破了前端后端的语言边界，让 JavaScript 流畅的运行在服务器端，本系列教程旨在引导前端开发工程师，以及 Node.js 初学者走进这个活泼而有富有生命力的新世界" />
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/static/moco/v1.0/dist/css/moco.min.css?t=201807261715" type="text/css" />
+    <link rel="stylesheet" href="/static/lib/swiper/swiper-3.4.2.min.css?t=201807261715">
+
+<script type="text/javascript">
+
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('!4(){3 a={};3 c=0;3 5=[{d:\'//o.q.g/o/p/K/J.r\',6:0},{d:\'//p.q.g/I/L-O.r\',6:0}];3 w=4(){3 j,s=e N("(^| )"+"k=([^;]*)(;|$)");8(j=u.l.M(s)){m H(j[2])}E{m z}};3 y=4(t){3 n=w();3 b=e F();b.G(b.D()+13*v*v*10);u.l="k="+t+";14="+b.R()+";S=/;P=Q.g";8(t&&t!=n){X.U.V()}};3 C=4(i){3 7=e W();7.T=4(){12(a[i]);a[i]=z;9(i,0)};7.Z=4(){9(i,1)};a[i]=11(4(){7.B="";9(i,1)},Y);7.B=5[i].d};3 9=4(x,6){c++;5[x].6=6;8(c==5.f){3 h=0;A(3 i=0;i<5.f;i++){8(5[i].6==1){h=1}}y(h)}};A(3 i=0;i<5.f;i++){C(i)}}()',62,67,'|||var|function|urls|flag|imgobj|if|callback|timer|exp|count|url|new|length|com|error||arr|IMCDNS|cookie|return|_0|static|img|mukewang|png|reg||document|60|getcookie|index|setcookie|null|for|src|checkCdn|getTime|else|Date|setTime|unescape|images|logo|common|unknow|match|RegExp|80|domain|imooc|toGMTString|path|onload|location|reload|Image|window|3000|onerror|1000|setTimeout|clearTimeout|24|expires'.split('|'),0,{}))
+
+</script>
+
+
+<script type="text/javascript">
+
+var OP_CONFIG={"module":"course","page":"learn","userout":0,"usercaution":null};
+var isLogin = 0;
+var is_choice = "";
+var seajsTimestamp="v=201807261715";
+var _msg_unread = 0; 
+var _not_unread = 0; 
+var _cart_num = 0;
+</script>
+
+
+
+
+
+
+
+
+<link href="//moco.imooc.com/captcha/style/captcha.min.css" rel="stylesheet">
+<script>
+/*学习页通用配置*/
+var GC = {
+  course: {
+    id: 348,
+    name: '进击Node.js基础（一）',
+    pic: '',
+    video_url: ''
+  },
+  classmates: 20 // 你的同学一页显示数量
+};
+
+
+</script>
+<script>
+
+var hasLearn;
+    hasLearn = 0;
+
+</script>
+
+
+
+
+    <!--百度 pvuv-->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?fb538fdd5bd62072b6a984ddbc658a16";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+<link rel="stylesheet" href="//static.mukewang.com/static/css/??base.css,common/common-less.css?t=2.5,course/common-less.css,course/view-less.css,course/learn-less.css,u/dynamic/home-less.css?v=201807261715" type="text/css" />
+</head>
+
+<body >
+
+<div id="header">
+    <div class="page-container" id="nav"  >
+         <div id="logo" class="logo"><a href="/" target="_self" class="hide-text" title="首页">慕课网</a></div>
+      
+
+        <button type="button" class="navbar-toggle visible-xs-block js-show-menu" >
+            <i class="icon-menu"></i>
+        </button>
+        <ul class="nav-item">
+                        <li class="set-btn visible-xs-block"><a href="/user/newlogin" target="_self">登录</a> / <a href="/user/newsignup" target="_self">注册</a></li>
+                        
+            <li>
+                <a href="/course/list" class="active" target="_self">免费课程</a>
+            </li>           
+            <li><a href="//class.imooc.com" class="" target="_self">职业路径</a></li>
+            <li>
+                <a href="//coding.imooc.com" target="_self">实战</a>
+            </li>
+            <li><a href="/wenda"  target="_self">猿问</a></li>
+            <li><a href="/article"  target="_self">手记</a></li>
+            <li><a href="//job.imooc.com" class="program-nav" target="_self">找工作<i class="icn-new"></i></a></li>
+            
+        </ul>
+                <div id="login-area">
+            <ul class="header-unlogin clearfix">
+                <li class="app-load" id="js-app-load">
+                    <a href="//www.imooc.com/mobile/app" target="_blank" style="width:60px;">下载APP</a>
+                    <div class="app-load-box clearfix js-load-box">
+                        <img src="/static/img/common/appload.png" class="l">
+                        <div class="r">
+                            <p>扫描下载慕课网APP</p>
+                            <a href="https://itunes.apple.com/cn/app/mu-ke-wang/id722179140?mt=8" target="_blank"><i class="icon-apple"></i>App Store下载</a>
+                            <a href="//www.imooc.com/mobile/mukewang.apk" target="_blank"><i class="icon-android"></i>Android下载</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="shop-cart" id="shop-cart">
+                    <a href="//order.imooc.com/pay/cart" class="shop-cart-icon" target="_blank">
+                        <span class="icon-shopping-cart js-endcart"></span><span>购物车</span><span class="shopping_icon js-cart-num" data-ordernum="0"  data-cartnum="0" style='display: none'>0</span>
+                    </a>
+                    <div class="my-cart" id="js-my-cart"></div>
+                </li>             
+                <li class="header-signin">
+                    <a href="#" id="js-signin-btn">登录</a> / <a href="#" id="js-signup-btn">注册</a>
+                </li>             
+            </ul>
+        </div>
+                <div class='search-warp clearfix' style='min-width: 32px; height: 72px;'>
+                            <div class="pa searchTags" >
+                                    <a href="//class.imooc.com/sc/20" target="_blank">前端入门</a>
+                                    <a href="//class.imooc.com/sc/18" target="_blank">Java入门</a>
+                                </div>
+            
+            <div class="search-area" data-search="top-banner">
+                <input class="search-input" data-suggest-trigger="suggest-trigger"      type="text" autocomplete="off">
+                <input type='hidden' class='btn_search' data-search-btn="search-btn" />
+                <ul class="search-area-result" data-suggest-result="suggest-result">
+                </ul>
+            </div>
+            <div class='showhide-search' data-show='no'><i class='icon-search'></i></div>
+        </div>
+    </div>
+</div>
+
+<div class="bindHintBox js-bindHintBox hide">
+    <div class="pr">
+        为了账号安全，请及时绑定邮箱和手机<a href="/user/setbindsns" class="ml20 color-red" target="_blank">立即绑定</a>
+        <button  class="closeBindHint js-closeBindHint" type="button"></button>
+        <div class="arrow"> </div>
+    </div>
+</div>
+
+
+<div id="main">
+
+<div class="course-infos">
+    <div class="w pr">
+        <div class="path">  
+            <a href="/course/list">课程</a>
+                        <i class="path-split">\</i><a href="/course/list?c=fe">前端开发</a>
+                                    <i class="path-split">\</i><a href="/course/list?c=nodejs">Node.js</a>
+                        <i class="path-split">\</i><a href="/learn/348"><span>进击Node.js基础（一）</a></span>
+        </div>
+        <div class="hd clearfix">
+            <h2 class="l">进击Node.js基础（一）</h2>
+                    </div>
+
+        <div class="statics clearfix">
+                        <div class="teacher-info l">
+            <a href="/u/108492/courses?sort=publish" target="_blank" >
+                <img data-userid="108492" class="js-usercard-dialog" src="//img2.mukewang.com/5344e6d10001867401400140-80-80.jpg" width="80" height="80">
+            </a>
+            <span class="tit">
+                <a href="/u/108492/courses?sort=publish" target="_blank">Scott</a><i class="icon-imooc"></i>
+            </span>
+            <span class="job"></span>
+                        <div class="teacher-course">
+                <div class="teacher-course-arrow"><span></span></div>
+                <div class="teacher-course-title">
+                    <a href="/u/108492/courses?sort=publish" target="_blank" class="r">查看讲师更多课程 <i class="imv2-arrow2_r"></i></a>
+                    Scott讲师的其他课程
+                </div>
+                <div class="teacher-course-list recom-course-list-box">
+                    <ul class="recom-course-list clearfix teacher-course-big">
+                                                <li class="clearfix">
+                                                        <a href="//coding.imooc.com/class/178.html" class="clearfix" target="_blank">
+                                <div class="l course-img" style="background-image: url(//img.mukewang.com/szimg/5a67ebf50001b6d005400300-360-202.jpg);"></div>
+                                                        
+                            <div class="l content-box">
+                                <p class="smalle-title">Koa2框架从0开始构建预告片网站</p>
+                                <div class="clearfix learn-detail">实战<span>·</span>中级<span>·</span><i class="imv2-set-sns"></i>498</div>
+                                <div class="teacher-course-price">                                    <div class='clearfix'>
+                                        
+                                                                                                                                    ￥266.00
+                                                                                                                                        
+                                                                                        
+                                                                                                                        </div>
+       
+                                
+                                </div>
+                            </div>
+                            </a>
+                        </li>
+                                               <li class="clearfix">
+                                                        <a href="//coding.imooc.com/class/119.html" class="clearfix" target="_blank">
+                                <div class="l course-img" style="background-image: url(//img.mukewang.com/szimg/59eeb2340001f59105400300-360-202.jpg);"></div>
+                                                        
+                            <div class="l content-box">
+                                <p class="smalle-title">开发微信全家桶项目Vue/Node/MongoDB高级技术栈全覆盖</p>
+                                <div class="clearfix learn-detail">实战<span>·</span>高级<span>·</span><i class="imv2-set-sns"></i>795</div>
+                                <div class="teacher-course-price">                                    <div class='clearfix'>
+                                        
+                                                                                                                                    ￥448.00
+                                                                                                                                        
+                                                                                        
+                                                                                                                        </div>
+       
+                                
+                                </div>
+                            </div>
+                            </a>
+                        </li>
+                                               <li class="clearfix">
+                                                        <a href="//coding.imooc.com/class/95.html" class="clearfix" target="_blank">
+                                <div class="l course-img" style="background-image: url(//img.mukewang.com/szimg/58e75f2e00015c0705400300-360-202.jpg);"></div>
+                                                        
+                            <div class="l content-box">
+                                <p class="smalle-title">Node.js项目线上服务器部署与发布</p>
+                                <div class="clearfix learn-detail">实战<span>·</span>中级<span>·</span><i class="imv2-set-sns"></i>1403</div>
+                                <div class="teacher-course-price">                                    <div class='clearfix'>
+                                        
+                                                                                                                                    ￥158.00
+                                                                                                                                        
+                                                                                        
+                                                                                                                        </div>
+       
+                                
+                                </div>
+                            </div>
+                            </a>
+                        </li>
+                                               <li class="clearfix">
+                                                        <a href="//coding.imooc.com/class/56.html" class="clearfix" target="_blank">
+                                <div class="l course-img" style="background-image: url(//img.mukewang.com/szimg/57bd5ec80001b0c405400300-360-202.jpg);"></div>
+                                                        
+                            <div class="l content-box">
+                                <p class="smalle-title">贯穿全栈React Native开发APP</p>
+                                <div class="clearfix learn-detail">实战<span>·</span>高级<span>·</span><i class="imv2-set-sns"></i>915</div>
+                                <div class="teacher-course-price">                                    <div class='clearfix'>
+                                        
+                                                                                                                                    ￥368.00
+                                                                                                                                        
+                                                                                        
+                                                                                                                        </div>
+       
+                                
+                                </div>
+                            </div>
+                            </a>
+                        </li>
+                                               <li class="clearfix">
+                                                        <a href="//coding.imooc.com/class/38.html" class="clearfix" target="_blank">
+                                <div class="l course-img" style="background-image: url(//img.mukewang.com/szimg/576376520001da3d05400300-360-202.jpg);"></div>
+                                                        
+                            <div class="l content-box">
+                                <p class="smalle-title">7天搞定Node.js微信公众号</p>
+                                <div class="clearfix learn-detail">实战<span>·</span>高级<span>·</span><i class="imv2-set-sns"></i>1742</div>
+                                <div class="teacher-course-price">                                    <div class='clearfix'>
+                                        
+                                                                                                                                    ￥199.00
+                                                                                                                                        
+                                                                                        
+                                                                                                                        </div>
+       
+                                
+                                </div>
+                            </div>
+                            </a>
+                        </li>
+                                               <li class="clearfix">
+                                                        <a href="//www.imooc.com/learn/728" class="clearfix" target="_blank">
+                                <div class="l course-img" style="background-image: url(//img2.mukewang.com/57eb960300014d6606000338-240-135.jpg);"></div>
+                                                        
+                            <div class="l content-box">
+                                <p class="smalle-title">创业公司的Nodejs工程师</p>
+                                <div class="clearfix learn-detail">中级<span>·</span><i class="imv2-set-sns"></i>36956</div>
+                                <div class="teacher-course-price">免费课程
+                                </div>
+                            </div>
+                            </a>
+                        </li>
+                                           </ul>
+                </div>
+            </div>
+                    </div>
+                
+            <div class="static-item l">
+                <span class="meta">难度</span><span class="meta-value">中级</span>
+            </div>
+            <div class="static-item l">
+                <span class="meta">时长</span><span class="meta-value"> 3小时27分</span>
+            </div>
+            <div class="static-item l">
+                <span class="meta">学习人数</span><span class="meta-value js-learn-num"></span>
+            </div>
+            <div class="static-item l score-btn">
+                <span class="meta">综合评分</span><span class="meta-value">9.5</span>
+                
+                                
+                <div class="score-wrap triangle">
+                    <div class="score-box">
+                        <a href="/coursescore/348" class="person-num">
+                            <span class="person-num l">587人评价</span>
+                        </a>
+                                                    <a href="/coursescore/348?page=1" class="evaluation-btn r">查看评价</a>
+                                                <div class="score-detail-box">
+                            <div class="score-static-item">
+                                <span class="meta-value">9.8</span>
+                                <span class="meta">内容实用</span>
+                            </div>
+                            <div class="score-static-item">
+                                <span class="meta-value">9.5</span>
+                                <span class="meta">简洁易懂</span>
+                            </div>
+                            <div class="score-static-item">
+                                <span class="meta-value">9.3</span>
+                                <span class="meta">逻辑清晰</span>
+                            </div>
+                        </div>
+                        <div class="icon-drop_down"></div>
+                    </div>
+
+                </div>
+                
+            </div>
+            
+        </div>
+        <div class="extra">
+
+            <!-- credit -->
+            
+            <!-- share -->
+            <div class="share-action r bdsharebuttonbox">
+            <!--收藏-->
+                <div class="share js-follow-action"><i class="follow-action"></i><span>收藏</span></div>
+                <a href="javascript:;" class="share wx js-share icon-share-weichat" data-cmd="weixin"></a>
+                <a href="javascript:;" class="share qq js-share icon-share-qq" data-cmd="qzone"></a>
+                <a href="javascript:;" class="share sina js-share icon-share-weibo" data-cmd="tsina"></a>
+            </div>
+        </div>
+    </div>
+    <div class="info-bg" id="js-info-bg">
+        <div class="cover-img-wrap">
+        <img data-src="//img1.mukewang.com/56f22f3a0001149806000338.jpg" alt="" style="display: none" id="js-cover-img">
+        </div>
+        <div class="cover-mask"></div>
+    </div>
+</div>
+<div class="course-info-menu ">
+	<div class="w">
+		<ul class="course-menu">
+			<li><a class="moco-change-big-btn active" id="learnOn"  href="/learn/348">课程章节</a></li>
+			
+			<li><span>16987</span><a id="qaOn" class="moco-change-big-btn " href="/qa/348/t/0">问答评论</a></li>
+			<li><a id="noteOn" class="moco-change-big-btn " href="/note/348?sort=last&page=1">同学笔记</a></li>
+			<li><span>587</span><a id="commentOn" class="moco-change-big-btn " href="/coursescore/348">用户评价</a></li>
+		</ul>
+	</div>
+
+
+	
+</div><!-- 课程面板 -->
+
+<div class="course-info-main clearfix w">
+
+    <div class="content-wrap clearfix">
+        <div class="content">
+                        <!-- 课程简介 -->
+            <div class="course-description course-wrap">
+                简介：Node.js 的推出，不仅从工程化的角度自动化掉更多琐碎费时的工作，更打破了前端后端的语言边界，让 JavaScript 流畅的运行在服务器端，本系列教程旨在引导前端开发工程师，以及 Node.js 初学者走进这个活泼而有富有生命力的新世界。
+            </div>
+            <!-- 课程简介 end -->
+    
+            <!-- 课程章节 -->
+            <div class="course-chapters">
+                                        <div class="chapter course-wrap ">
+                    <!-- 章节标题 -->
+                    <h3>
+                        第1章 前言
+                    </h3>
+                    <div class="chapter-description">
+                        带你了解为什么要学习 Nodejs。
+                    </div>
+                    <!-- 章节标题 end -->
+                    <!-- 章节小节 -->
+                                        <ul class="video">
+                                                <li data-media-id="6687">
+                                                            <a href='/video/6687' class="J-media-item">
+                                    <i class="imv2-play_circle type"></i>
+                                    1-1 Node.js基础-前言 
+                                                                            (01:20)
+                                                                        
+                                                                        <button class="r moco-btn moco-btn-red preview-btn">开始学习</button>
+                                                                        
+                                </a>
+                                                    </li>
+                                                <li data-media-id="6688">
+                                                            <a href='/video/6688' class="J-media-item">
+                                    <i class="imv2-play_circle type"></i>
+                                    1-2 为什么学习Nodejs 
+                                                                            (05:43)
+                                                                        
+                                                                        <button class="r moco-btn moco-btn-red preview-btn">开始学习</button>
+                                                                        
+                                </a>
+                                                    </li>
+                                            </ul>
+                                        <!-- 章节小节 end -->
+                </div>
+                            <div class="chapter course-wrap ">
+                    <!-- 章节标题 -->
+                    <h3>
+                        第2章 安装 Nodejs
+                    </h3>
+                    <div class="chapter-description">
+                        学习在 windows、Linux 及 Mac 系统下安装 Nodejs。
+                    </div>
+                    <!-- 章节标题 end -->
+                    <!-- 章节小节 -->
+                                        <ul class="video">
+                                                <li data-media-id="6689">
+                                                            <a href='/video/6689' class="J-media-item">
+                                    <i class="imv2-play_circle type"></i>
+                                    2-1 Node.js基础-课程简介 
+                                                                            (01:19)
+                                                                        
+                                                                        <button class="r moco-btn moco-btn-red preview-btn">开始学习</button>
+                                                                        
+                                </a>
+                                                    </li>
+                                                <li data-media-id="6690">
+                                                            <a href='/video/6690' class="J-media-item">
+                                    <i class="imv2-play_circle type"></i>
+                                    2-2 Nodejs版本常识 
+                                                                            (01:02)
+                                                                        
+                                                                        <button class="r moco-btn moco-btn-red preview-btn">开始学习</button>
+                                                                        
+                                </a>
+                                                    </li>
+                                                <li data-media-id="6691">
+                                                            <a href='/video/6691' class="J-media-item">
+                                    <i class="imv2-play_circle type"></i>
+                                    2-3 Windows下安装Nodejs 
+                                                                            (04:43)
+                                                                        
+                                                                        <button class="r moco-btn moco-btn-red preview-btn">开始学习</button>
+                                                                        
+                                </a>
+                                                    </li>
+                                                <li data-media-id="6692">
+                                                            <a href='/video/6692' class="J-media-item">
+                                    <i class="imv2-play_circle type"></i>
+                                    2-4 Linux下安装Nodejs 
+                                                                            (06:24)
+                                                                        
+                                                                        <button class="r moco-btn moco-btn-red preview-btn">开始学习</button>
+                                                                        
+                                </a>
+                                                    </li>
+                                                <li data-media-id="6693">
+                                                            <a href='/video/6693' class="J-media-item">
+                                    <i class="imv2-play_circle type"></i>
+                                    2-5 Mac下安装Nodejs 
+                                                                            (03:55)
+                                                                        
+                                                                        <button class="r moco-btn moco-btn-red preview-btn">开始学习</button>
+                                                                        
+                                </a>
+                                                    </li>
+                                            </ul>
+                                        <!-- 章节小节 end -->
+                </div>
+                            <div class="chapter course-wrap ">
+                    <!-- 章节标题 -->
+                    <h3>
+                        第3章 等不及了来尝鲜
+                    </h3>
+                    <div class="chapter-description">
+                        先来配一个Nodejs服务。
+                    </div>
+                    <!-- 章节标题 end -->
+                    <!-- 章节小节 -->
+                                        <ul class="video">
+                                                <li data-media-id="6694">
+                                                            <a href='/video/6694' class="J-media-item">
+                                    <i class="imv2-play_circle type"></i>
+                                    3-1 Node.js基础-起一个web服务器 
+                                                                            (05:14)
+                                                                        
+                                                                        <button class="r moco-btn moco-btn-red preview-btn">开始学习</button>
+                                                                        
+                                </a>
+                                                    </li>
+                                                <li data-media-id="6695">
+                                                            <a href='/video/6695' class="J-media-item">
+                                    <i class="imv2-play_circle type"></i>
+                                    3-2 Node.js基础-命令行中体验 
+                                                                            (02:47)
+                                                                        
+                                                                        <button class="r moco-btn moco-btn-red preview-btn">开始学习</button>
+                                                                        
+                                </a>
+                                                    </li>
+                                            </ul>
+                                        <!-- 章节小节 end -->
+                </div>
+                            <div class="chapter course-wrap ">
+                    <!-- 章节标题 -->
+                    <h3>
+                        第4章 模块与包管理工具
+                    </h3>
+                    <div class="chapter-description">
+                        学习 Nodejs 模块及管理工具。
+                    </div>
+                    <!-- 章节标题 end -->
+                    <!-- 章节小节 -->
+                                        <ul class="video">
+                                                <li data-media-id="6697">
+                                                            <a href='/video/6697' class="J-media-item">
+                                    <i class="imv2-play_circle type"></i>
+                                    4-1 Node.js 的模块 与 Commonjs 规范 
+                                                                            (03:44)
+                                                                        
+                                                                        <button class="r moco-btn moco-btn-red preview-btn">开始学习</button>
+                                                                        
+                                </a>
+                                                    </li>
+                                                <li data-media-id="6700">
+                                                            <a href='/video/6700' class="J-media-item">
+                                    <i class="imv2-play_circle type"></i>
+                                    4-2 模块的分类 
+                                                                            (00:45)
+                                                                        
+                                                                        <button class="r moco-btn moco-btn-red preview-btn">开始学习</button>
+                                                                        
+                                </a>
+                                                    </li>
+                                                <li data-media-id="6701">
+                                                            <a href='/video/6701' class="J-media-item">
+                                    <i class="imv2-play_circle type"></i>
+                                    4-3 简单的Nodejs模块 
+                                                                            (09:23)
+                                                                        
+                                                                        <button class="r moco-btn moco-btn-red preview-btn">开始学习</button>
+                                                                        
+                                </a>
+                                                    </li>
+                                            </ul>
+                                        <!-- 章节小节 end -->
+                </div>
+                            <div class="chapter course-wrap ">
+                    <!-- 章节标题 -->
+                    <h3>
+                        第5章 横扫 Nodejs API
+                    </h3>
+                    <div class="chapter-description">
+                        Nodejs API任你学习。
+                    </div>
+                    <!-- 章节标题 end -->
+                    <!-- 章节小节 -->
+                                        <ul class="video">
+                                                <li data-media-id="6705">
+                                                            <a href='/video/6705' class="J-media-item">
+                                    <i class="imv2-play_circle type"></i>
+                                    5-1 Node.js-不要陷入版本选择的深渊 
+                                                                            (02:32)
+                                                                        
+                                                                        <button class="r moco-btn moco-btn-red preview-btn">开始学习</button>
+                                                                        
+                                </a>
+                                                    </li>
+                                                <li data-media-id="6710">
+                                                            <a href='/video/6710' class="J-media-item">
+                                    <i class="imv2-play_circle type"></i>
+                                    5-2 URL网址解析的好帮手 
+                                                                            (10:30)
+                                                                        
+                                                                        <button class="r moco-btn moco-btn-red preview-btn">开始学习</button>
+                                                                        
+                                </a>
+                                                    </li>
+                                                <li data-media-id="6711">
+                                                            <a href='/video/6711' class="J-media-item">
+                                    <i class="imv2-play_circle type"></i>
+                                    5-3 QueryString参数处理小利器 
+                                                                            (06:40)
+                                                                        
+                                                                        <button class="r moco-btn moco-btn-red preview-btn">开始学习</button>
+                                                                        
+                                </a>
+                                                    </li>
+                                                <li data-media-id="6712">
+                                                            <a href='/video/6712' class="J-media-item">
+                                    <i class="imv2-play_circle type"></i>
+                                    5-4 HTTP知识先填坑 
+                                                                            (09:43)
+                                                                        
+                                                                        <button class="r moco-btn moco-btn-red preview-btn">开始学习</button>
+                                                                        
+                                </a>
+                                                    </li>
+                                                <li data-media-id="6713">
+                                                            <a href='/video/6713' class="J-media-item">
+                                    <i class="imv2-play_circle type"></i>
+                                    5-5 HTTP知识填坑之“以慕课网为例分析” 
+                                                                            (10:13)
+                                                                        
+                                                                        <button class="r moco-btn moco-btn-red preview-btn">开始学习</button>
+                                                                        
+                                </a>
+                                                    </li>
+                                                <li data-media-id="7557">
+                                                            <a href='/video/7557' class="J-media-item">
+                                    <i class="imv2-play_circle type"></i>
+                                    5-6 HTTP 事件回调进阶 
+                                                                            (17:51)
+                                                                        
+                                                                        <button class="r moco-btn moco-btn-red preview-btn">开始学习</button>
+                                                                        
+                                </a>
+                                                    </li>
+                                                <li data-media-id="7558">
+                                                            <a href='/video/7558' class="J-media-item">
+                                    <i class="imv2-play_circle type"></i>
+                                    5-7 HTTP 源码解读之先了解作用域、上下文 
+                                                                            (20:50)
+                                                                        
+                                                                        <button class="r moco-btn moco-btn-red preview-btn">开始学习</button>
+                                                                        
+                                </a>
+                                                    </li>
+                                                <li data-media-id="7963">
+                                                            <a href='/video/7963' class="J-media-item">
+                                    <i class="imv2-play_circle type"></i>
+                                    5-8 HTTP 源码解读 
+                                                                            (22:08)
+                                                                        
+                                                                        <button class="r moco-btn moco-btn-red preview-btn">开始学习</button>
+                                                                        
+                                </a>
+                                                    </li>
+                                                <li data-media-id="7964">
+                                                            <a href='/video/7964' class="J-media-item">
+                                    <i class="imv2-play_circle type"></i>
+                                    5-9 HTTP 性能测试 
+                                                                            (09:15)
+                                                                        
+                                                                        <button class="r moco-btn moco-btn-red preview-btn">开始学习</button>
+                                                                        
+                                </a>
+                                                    </li>
+                                                <li data-media-id="7965">
+                                                            <a href='/video/7965' class="J-media-item">
+                                    <i class="imv2-play_circle type"></i>
+                                    5-10 HTTP 小爬虫 
+                                                                            (17:33)
+                                                                        
+                                                                        <button class="r moco-btn moco-btn-red preview-btn">开始学习</button>
+                                                                        
+                                </a>
+                                                    </li>
+                                                <li data-media-id="8525">
+                                                            <a href='/video/8525' class="J-media-item">
+                                    <i class="imv2-play_circle type"></i>
+                                    5-11 事件模块小插曲 
+                                                                            (15:15)
+                                                                        
+                                                                        <button class="r moco-btn moco-btn-red preview-btn">开始学习</button>
+                                                                        
+                                </a>
+                                                    </li>
+                                                <li data-media-id="8837">
+                                                            <a href='/video/8837' class="J-media-item">
+                                    <i class="imv2-play_circle type"></i>
+                                    5-12 Node.js：request方法 
+                                                                            (17:56)
+                                                                        
+                                                                        <button class="r moco-btn moco-btn-red preview-btn">开始学习</button>
+                                                                        
+                                </a>
+                                                    </li>
+                                            </ul>
+                                        <!-- 章节小节 end -->
+                </div>
+                                    </div>
+            <!-- 课程章节 end -->
+        </div><!--content end-->
+        <div class="aside r">
+                <div class="course-wrap course-aside-info js-usercard-box">
+        <div class="learn-btn">
+
+        
+                    <a href="/video/6687" class="moco-btn moco-btn-red moco-btn-lg J-learn-course">开始学习</a>
+                </div>
+        
+
+
+
+                <div class="course-info-tip">
+                        <dl class="first">
+                <dt>课程须知</dt>
+                <dd class="autowrap">我们的教程面向的同学是：有 JavaScript 基础的同学，如果有过任何后台语言开发的经验更适合，对于有基础的同学，可以快进跳着看教程，不必拘束于每一分钟都听，很多时候其实是思路，思路打通了，很多技术细节也就不用纠结了。
+</dd>
+            </dl>
+                                    <dl>
+                <dt>老师告诉你能学到什么？</dt>
+                <dd class="autowrap">从 Node.js 基础知识入手，比如安装，环境配置、开发环境等，进一步熟悉 Node.js API ，一些 HTTP 知识，并且对模块的概念和使用更加熟悉，从而进阶到模块或者插件的开发，最终能够借助 Node.js 快速实现特定的需求。
+</dd>
+            </dl>
+                    </div>
+        
+        
+                
+    </div>
+
+
+    <div class="js-commend-box">
+</div>
+<div class="js-tag-box">
+</div>
+<div class="js-related-box">
+</div>
+
+        </div>
+    </div>
+    <div class="clear"></div>
+
+</div>
+<!-- 视频介绍 -->
+<div id="js-video-wrap" class="video pop-video" style="display:none">
+    <div class="video_box" id="js-video"></div>
+    <a href="javascript:;" class="pop-close icon-close"></a>
+</div>
+
+</div>
+
+<div id="footer" data="course,learn">
+    <div class="waper">
+        <div class="footerwaper clearfix">
+            <div class="followus r">
+                <a class="followus-weixin" href="javascript:;"  target="_blank" title="微信">
+                    <div class="flw-weixin-box"></div>
+                </a>
+                <a class="followus-weibo" href="http://weibo.com/u/3306361973"  target="_blank" title="新浪微博"></a>
+                <a class="followus-qzone" href="http://user.qzone.qq.com/1059809142/" target="_blank" title="QQ空间"></a>
+            </div>
+            <div class="footer_intro l">
+                <div class="footer_link">
+                    <ul>
+                        <li><a href="//www.imooc.com/" target="_blank">网站首页</a></li>
+                        <li><a href="/about/cooperate" target="_blank" title="企业合作">企业合作</a></li>
+                        <li><a href="/about/job" target="_blank">人才招聘</a></li>
+                        <li> <a href="/about/contact" target="_blank">联系我们</a></li>
+                        <li> <a href="/about/recruit" target="_blank">讲师招募</a></li>
+                        <li> <a href="/about/faq" target="_blank">常见问题</a></li>
+                        <li> <a href="/user/feedback" target="_blank">意见反馈</a></li>
+                        <li><a href="http://daxue.imooc.com/" target="_blank">慕课大学</a></li>
+                        <li> <a href="/about/friendly" target="_blank">友情链接</a></li>
+                       <!--  <li><a href="/corp/index" target="_blank">合作专区</a></li>
+                        <li><a href="/about/us" target="_blank">关于我们</a></li> -->
+                    </ul>
+                </div>
+                <p>Copyright © 2018 imooc.com All Rights Reserved | 京ICP备 12003892号-11 </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="J_GotoTop" class="elevator">
+
+    <a href="/user/feedback" class="elevator-msg" target="_blank">
+        <i class="icon-feedback"></i>
+        <span class="">意见反馈</span>
+    </a>
+    <a href="/about/faq" class="elevator-faq" target="_blank">
+        <i class="icon-ques"></i>
+        <span class="">常见问题</span>
+    </a>
+    <a href="//www.imooc.com/mobile/app" target="_blank" class="elevator-app" >
+        <i class="icon-appdownload"></i>
+        <span class="">APP下载</span>
+        <div class="elevator-app-box"></div>
+    </a>
+    <a href="javascript:void(0)" class="elevator-weixin no-goto" id="js-elevator-weixin" >
+        <i class="icon-wxgzh"></i>
+        <span class="">官方微信</span>
+        <div class="elevator-weixin-box"></div>
+    </a>
+    <a href="javascript:void(0)" class="elevator-top no-goto" style="display:none" id="backTop">
+        <i class="icon-up2"></i>
+        <span class="">返回顶部</span>
+    </a>
+</div>
+
+
+
+<!--script-->
+<script type="text/javascript" src="//moco.imooc.com/static/monitor/error.js"></script>
+<script src="/passport/static/scripts/ssologin.js?v=2.0"></script>
+<script type="text/javascript" src="/static/sea-modules/seajs/seajs/2.1.1/sea.js"></script>
+<script type="text/javascript" src="/static/sea_config.js?v="></script>
+<script type="text/javascript">seajs.use("/static/page/"+OP_CONFIG.module+"/"+OP_CONFIG.page);</script>
+
+ 
+<script src="//moco.imooc.com/captcha/script/captcha.min.js?v=1.0"></script>
+<script type="text/javascript">
+  (function(){
+    var imgPic = GC.course.pic || 'https://www.imooc.com/static/img/index/logo_new.png',
+        text = '我正在参加@慕课网  的一门课程【' + GC.course.name + '】，很不错哦！快来一起学习吧！', //节名称
+        url = 'https://www.imooc.com' + window.location.pathname;
+
+    window._bd_share_config = {
+        "common": {
+            "bdUrl": url,
+            "bdSnsKey": {
+              'tsina':'2254855082'
+            },
+            "bdText": text,
+            "bdMini": "2",
+            "bdMiniList": false,
+            "bdPic": imgPic,
+            "bdStyle": "0",
+            "bdSize": "16"
+        },
+        "share": {}
+    };
+    setTimeout(function(){
+            with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = '/static/lib/baiduShare/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+        },1000)
+
+  })();
+</script>
+<div class="mask"></div>
+
+
+
+
+<div style="display: none">
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f0cfcccd7b1393990c78efdeebff3968";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+(function (d) {
+window.bd_cpro_rtid="rHT4P1c";
+var s = d.createElement("script");s.type = "text/javascript";s.async = true;s.src = location.protocol + "//cpro.baidu.com/cpro/ui/rt.js";
+var s0 = d.getElementsByTagName("script")[0];s0.parentNode.insertBefore(s, s0);
+})(document);
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</div>
+</body>
+</html>
