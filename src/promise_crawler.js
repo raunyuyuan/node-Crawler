@@ -3,10 +3,11 @@ var cheerio = require('cheerio');
 
 
 var baseUrl = 'http://www.imooc.com/learn/';
-var url = 'http://www.imooc.com/learn/348';
 
 var videoIds = [348, 259, 197, 134, 75];
-
+String.prototype.replaceEmpty = function(){
+	return this.replace(/\s+/g, ' ')
+}
 function getpageAsync(url) {
     return new Promise(function(resolve, reject) {
         console.log('正在爬取...');
@@ -60,7 +61,6 @@ Promise
         });
 
         printCourseInfo(coursesData);
-        console.log(coursesData);
     });
 
 
@@ -111,7 +111,7 @@ function printCourseInfo(coursesData) {
             console.log(chapterTitle + '\n');
 
             item.video.forEach(function(video) {
-                console.log('【' + video.id + '】' + video.title + '\n');
+                console.log('【' + video.id.replaceEmpty() + '】' + video.title.replaceEmpty() + '\n');
             });
         });
     });
