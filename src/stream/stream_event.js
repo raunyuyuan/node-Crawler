@@ -1,27 +1,21 @@
 import fs from 'fs'
 
-let readStream = fs.createReadStream('src/stream/index.js')
-let n = 0
+const readStream = fs.createReadStream('src/stream/node.pkg')
+const writeStream = fs.createWriteStream('src/stream/node_copy.pkg')
+
 readStream
 	.on('data', chunk => {
-		console.log(Buffer.isBuffer(chunk))
-		n++
-		console.log('data emits')
-		// console.log(chunk.toString('utf8'))
-
-		readStream.pause()
-		console.log('data pause')
-		setTimeout(()=>{
-			console.log('data pause end')
-			readStream.resume()
-		}, 3000)
+		if (writeStream.write(chunk) === false) {
+			console.log('still cached')
+			readStream.pause()
+		}
 	})
 	.on('readable', () => {
 		console.log('data readable')
 	})
-	.on('end', () => {
-		console.log(n)
-		console.log('data ends')
+
+readStream.on('end', () => {
+		writeStream.end()
 	})
 	.on('close', () => {
 		console.log('data close')
@@ -29,3 +23,10 @@ readStream
 	.on('error', e => {
 		console.log('data read error' + e)
 	})
+
+writeStream.on('drain', () => {
+	console.log('data drains')
+	readStream.resume()
+})
+
+// 防止爆仓
